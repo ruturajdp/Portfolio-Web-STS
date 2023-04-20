@@ -1,0 +1,857 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
+
+/* above imports the google fonts in our css file */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px; 
+    /* for all body elements font-size will be this
+    but later we can modify individualy for the elements */
+
+    line-height: 2em;
+
+    color: #333;
+    font-weight: 400px;
+    background: #fff;
+    /* font color we styled to grey */
+}
+
+
+/* Modifying the headers with BS styling */
+
+h1, h2, h3, h4 {
+    margin:0 0 8px;
+    font-family:'Roboto', sans-serif;
+    color: #005383 !important;
+
+}
+
+p{
+    margin-bottom: 15px !important;
+    font-weight: 500;
+    color:  #2C3539;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 17px;
+}
+
+
+.columns-block {
+    display: flex;
+    /* as we want multiple divisions to come next to each other */
+
+    flex-wrap:wrap;
+
+    justify-content: space-around;
+
+
+}
+
+.left-col-block {
+    width: 30%;
+    /* the div on which this class is applied will have 30% area */
+
+    overflow: hidden;
+
+    position: fixed;
+    /* the left div will not move from its position at all */
+
+    left: 0;
+    /* left div will start from left of web page */
+
+    text-align: center;
+    
+
+}
+
+.right-col-block {
+    width: 70%;
+
+    position: absolute;
+
+    background-color: #89d9e460;
+
+    right: 0;
+    /* right div will be placed to right on the web page */
+}
+
+/* media queries */
+
+@media (max-width: 1082px) {
+    .header .profile-image h5{
+        font-size: 18px;    
+
+    }
+    
+    .header .info>h2{
+        font-weight:400;
+        font-size: 29px;
+    }
+
+    .header .info>p{
+        font-weight: 100 !important;
+        color:rgb(255, 255, 255);
+        margin: 5px !important;
+    }
+
+    .header .card h1 {
+        font-size: 30px !important;
+        color: rgb(255, 255, 255) !important;
+        line-height: 1;
+        
+        margin:18px !important;
+    
+    }
+    .header .card p {
+        font-size: 18px !important;
+    }
+    .header .card .social-icon li a {
+        display: block;
+        font-size: 23.5px !important;
+        /* sixe of icons */
+    
+        color: #fff;
+        
+        height: 40px !important;
+        width: 40px !important;
+        text-align: center;
+    
+        border-radius: 100%;
+        /* we want a cicular border around the icons */
+        border: 2px solid #ffffff;
+    
+    }
+}
+
+@media (max-width: 980px) {
+    .header .card h1 {
+        font-size: 25px !important;
+        margin: 18px 12px !important;
+    }
+
+    .header .info{
+        padding: 1rem !important;
+    }
+    .header .info>h2{
+        font-weight:400;
+        font-size: 25px !important;
+        margin-top: 1.5rem;
+    }
+    .header .info>p{
+        font-family: 'Poppins', sans-serif;
+        color:rgb(255, 255, 255);
+        margin: 5px !important;
+
+    }
+}
+
+@media (max-width: 750px) {
+    /* now targeting the blocks and styling them such that when 
+    width is less than 600px the block should behave responsively*/
+ 
+
+    .columns-block {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .left-col-block {
+        width: 100%;  
+        /*  property sets the width of the 
+        elements to 100% of the available viewport width. */
+        position: relative;
+        
+    }
+    .right-col-block {
+        width: 100%;
+        position: relative;
+    }
+    /* the two columns on the webpage 
+    (represented by the .left-col-block and .right-col-block 
+    classes) stack on top of each other when the device 
+    screen size is smaller than 600 pixels. */
+
+    .header .profile-image h5{
+        display: none;
+
+    }
+
+    .header .info>h2{
+        display: none;
+    }
+
+    .header .info>p{
+        display: none;
+    }
+    
+    .section-wrapper {
+	    padding: 15px 20px !important;
+	    text-align: center;
+	}
+	.section-wrapper .card {
+	    margin-top: 2rem !important;
+	}
+   
+  
+}
+
+@media screen and (max-width:500px){
+	
+	p{
+	    margin-bottom: 15px !important;
+	    font-weight: 500;
+	    color: #464646;
+	    font-family: 'Poppins', sans-serif !important;
+	    font-size: 15px;
+	}
+	
+    .header .profile-image h5{
+        display: block;
+
+    }
+    .header .info{
+        padding: 1rem !important;
+        text-align: center;
+    }
+    .header .info>h2{
+        display: block;
+        padding-top: 2rem;
+        margin-bottom: 0;
+    }
+    .header .info>p{
+        display:block;
+        padding-bottom: 1rem;
+    }
+    
+    .expertise-item {
+		padding-top: 10px !important;
+	}
+	.expertise-item h3 {
+	    font-weight: 500;
+	    font-size: calc(1.2rem + .1vw);
+	}
+	
+	#myform .form-label {
+		margin-top:0px !important;
+	}
+	
+	#myform .custom-form-top {
+		margin-top: 20px !important;
+	}
+	
+	
+}
+
+@media (max-width:420px) {
+
+    .header .info>h2{
+        display: block;
+        padding-top: 1rem;
+        margin-bottom: 0;
+    }
+    .header .info>p{
+        display:block;
+        padding-bottom: 1rem;
+    }
+    
+}
+
+@media (max-width:360px) {
+    .header .info>h2{
+        display: block;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
+    .header .info>p{
+        display:block;
+        padding-bottom: 1rem;
+    }
+}
+
+.header {
+    padding: 0;
+    /* we dont want bootstrap to add padding and margin
+    so we wil add it */
+    margin: 0;
+    height: 100vh; 
+    /* view-port vh 
+    100 vh means what ever height we see for a webpage from 
+    top to bottom of the web page screen 100% height 
+    so if we tell 100vh it means the hero column in which 
+    header is there will occupy 100% height */
+    
+    vertical-align: middle;
+    /* means wertically align this content in middle */
+    position: relative;
+
+    /* overflow: hidden; */
+    display: flex;
+    
+    
+}
+
+.profile-image h5 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    color: #ffffff75;
+    text-align: center;
+    font-size: 20px;    
+}
+
+
+
+.header .info{
+    position: absolute;
+    bottom:0;
+    top:67%;
+    margin: 0 auto;
+    padding: 2rem;
+    left: 0;
+    right: 0;
+    
+}
+
+
+
+.header .info>h2{
+    text-transform:capitalize;
+    font-family:'Poppins', sans-serif;
+    font-weight:400;
+    color: #ffffff !important;
+    font-size: 25px;
+
+}
+
+.header .info>p{
+    font-weight: 100 !important;
+    color:rgb(255, 255, 255);
+    margin: 5px !important;
+    font-size: 15px;
+    
+}
+
+
+.profile-image video {
+    position: absolute;
+   
+    /* so below styling means start placing the image 
+    from where the parent element is starting */
+    left: 0;
+    top: 0;
+    
+    object-fit:cover;
+    /* makes the image to fit in proportion */
+
+    width: 100%;
+    height: 100%;
+    /* image content will occupy 100% width and height of
+    its parent */
+
+    /* background-image: url(../img/neha.jpg); */
+    background-size: cover;
+    background-position:top-center;
+    /* intial position after resizing will be top-centre only */
+
+    /* z-index: -1; */
+    /* priority is less that of .content */
+    
+
+}
+
+
+#img1:active {
+    transform: scale(0.8);
+}
+
+.profile-image:hover {
+    cursor: pointer;
+}
+
+.header .card {
+    width: 100%;
+    height: 100%;
+    top: 100%;
+    bottom: 0px; 
+    margin: 0 auto;
+    /* margin for top bottom is 0 and for left ans right is auto  */
+    position: relative;
+    background: #1f3d4738;
+    backdrop-filter: blur(5px);
+    /* border-radius: 15px; */
+    display: flex;
+    /* contents gets horizontally aligned  */
+    flex-direction:column;
+    /* forced to algin vertically */
+    justify-content: center;
+
+
+    transition: 2s;
+
+}
+
+.header:hover .card{
+    top: 0;
+}
+
+.header .card h1 {
+    font-size: 36px;
+    color: rgb(255, 255, 255) !important;
+    line-height: 1;
+    
+    margin:20px;
+
+}
+
+.header .card p {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 8px;
+}
+
+.header .card .social-icon {
+    margin: 0;
+
+    padding: 0;
+
+    display: block;
+    /* we will display the icons as block elements if we remove it 
+    the link icons will act as inline element */
+}
+
+.header .card .social-icon li{
+    display: inline-block;
+    /* we want the icons one next to the other also we want height
+    width properties that why we are using inline-block */
+
+    margin: 0 3px;
+    /* margin 2px left and right will be applied for the 
+    icons */
+    
+}
+
+
+.header .card .social-icon li a {
+    display: block;
+    font-size: 27px;
+    /* sixe of icons */
+
+    color: #fff;
+    
+    height: 45px;
+    width: 45px;
+    text-align: center;
+
+    border-radius: 100%;
+    /* we want a cicular border around the icons */
+    border: 2px solid #ffffff;
+
+}
+
+.header .card .social-icon li a:hover {
+
+    border-color:aqua;
+}
+
+
+/* Nav */
+
+img {
+    max-width: 250px;
+    padding-left: 3rem;
+    transform: rotate(-10deg);
+}
+
+.right-col-block .navi-custom {
+    background-color: #042b5ee1 !important;
+    /* height: 8rem !important; */
+    padding-top: 2rem;
+}
+
+.right-col-block .navbar-nav {
+    margin: 0 auto;
+}
+
+.right-col-block .navbar-nav .nav-item a {
+    color: #ffffff !important;
+    font-size: 17px !important;
+    text-align: center;
+    padding: 7px 20px;
+
+}
+
+.right-col-block .navbar-toggler {
+    color: #00ccd6cc !important;
+}
+
+.right-col-block #navbarNavDropdown  {
+    margin: 0 40px;
+}
+
+.right-col-block #navbarNavDropdown .nav-item:hover {
+    background-color:#00000048;
+    border-radius: 10px;
+}
+
+
+/* Intro Styling */
+
+.section-wrapper {
+    padding: 20px 70px;
+    text-align: center;
+}
+
+.section-wrapper .card {
+    padding: 0;
+    margin-top: 4rem;
+    border-radius: 0.9rem !important;
+    border: 1px solid transparent !important;
+    backdrop-filter: blur(1rem);
+    border-color: rgba(28, 165, 189, 0.63) !important;
+    
+}
+
+.section-wrapper .cb1 {
+    background-color: rgb(255, 255, 255) !important;
+
+}
+
+.section-title {
+    margin-bottom: 15px;
+}
+
+.section-title h2 {
+    color: #444;
+    margin-top: 10px !important;
+}
+
+.section-wrapper p{
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Aquired Styling */
+
+.expertise-wrapper {
+    padding: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.expertise-item {
+    padding-top: 20px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.expertise-item h3 {
+    margin-bottom: 15px;
+    color: #333;
+    font-weight: 700;
+}
+
+
+.expertise-wrapper .card {
+    border-radius: 0.9rem !important;
+    border: 1px solid transparent !important;
+    backdrop-filter: blur(1rem);
+    border-color: rgba(28, 165, 189, 0.63) !important;
+}
+
+.expertise-wrapper .card:hover {
+    border: 2px solid transparent !important;
+    border-color: rgba(31, 28, 189, 0.63) !important;
+}
+
+.expertise-wrapper .cb2 {
+    background-color: rgb(255, 255, 255) !important;
+
+}
+
+
+/* Progress bar */
+
+.section-title h2 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.custom-col label{
+    font-size: 16px !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 2px;
+}
+
+.custom-col .progress {
+    background-color: #ffffff !important;
+    height: 22px;
+    border-radius: 20px;
+    border:1px solid #fffffff3;
+    box-shadow: 0 4px 4px #025169;
+    overflow: visible;
+    position: relative;
+}
+.progress .progress-bar{
+    border-radius: 20px;
+    border: 1px solid #fffffff3;
+    height: 20px;
+}
+
+.custom-col .progress-bar {
+    border-radius: 20px;
+}
+
+
+.colp {
+    background-color: aqua !important;
+}
+
+
+/* Form */
+
+.form-wrapper {
+    padding: 40px 0px;
+}
+
+.form-wrapper .section-title {
+    text-align: center;
+}
+
+.rt {
+    --card-height:  70vh;
+    --card-width:   calc(var(--card-height) / 1.5);
+    --bg:           25 28 41;
+    --color:        255 255 255;
+  }
+
+.bd {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}    
+
+.form-wrapper .user-form {
+    background: rgba(var(--bg));
+    position: relative;
+    border-radius: 6px;
+    color: rgba(var(--color) / 60%);
+    cursor: pointer;
+    text-align: center;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+.form-wrapper .user-form::before {
+    content: "";
+    width: 102%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #77fdff,
+      #03488e 43%,
+      #ff0072
+    );
+    position: absolute;
+    z-index: -1;
+    top: -0.95%;
+    left: -0.93%;
+    animation: spin 1s linear infinite;
+}
+
+.form-wrapper .user-form::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #77fdff,
+      #03488e 43%,
+      #ff0072
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 1s linear infinite;
+}
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+.form-wrapper .user-form:hover:before,
+.form-wrapper .user-form:hover:after {
+  transform: scale(1.5);
+  opacity: 0;
+}
+
+.bd .user-form {
+	height: 450px;
+}
+#myform .form-label {
+	margin-top:5px !important;
+}
+
+#myform .custom-form-top {
+	margin-top: 25px;
+}
+
+#myform .custom-input {
+	width: 60%;
+    font-size: 1rem;
+    margin: auto;
+}
+
+
+
+/* Form server side validation styling */
+
+.serv-alrt {
+	font-size:14px;
+	color: rgb(255 111 111); 
+}
+
+
+
+/* Form client side validation styling */
+
+.val-msg {
+    position:relative;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.success-msg {
+    font-size: 17px;
+    color: rgb(23, 255, 73);
+    position: absolute;
+    animation: buttons 0.1s linear;
+    display: none;
+}
+
+.danger-msg {
+    font-size: 17px;
+    color: #ff6b66;
+    position: absolute;
+    transition: 0.3s;
+    animation: buttons 0.1s linear;
+    display: none;
+}
+
+@keyframes buttons {
+    0% {
+        transform: scale(0.1);
+    }
+    50% {
+        transform: scale(0.5) ;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* Swal alert 2 Styling */
+
+.swal2-title {
+    font-size: 2rem !important;
+    padding-top: 1rem !important;
+  }
+  
+.swal2-container .swal2-icon {
+    /* height: 32px !important;
+    width: 32px !important; */
+    margin-top: 1rem !important;
+  }
+
+.swal2-actions {
+    margin: 15px 0 !important;
+  }
+
+.swal2-container {
+    padding: 0 !important;
+}
+
+@media (max-width: 750px) {
+    .swal2-popup {
+        padding: 0 !important;
+        width: 300px !important; /* adjust the width as per your requirement */
+    
+    }
+}
+
+
+
+/* Footer */
+
+.web-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    background-color: #042b5ee1;
+}
+
+.web-footer span {
+    display: block;
+    font-size: 27px;
+}
+
+.web-footer p {
+    color: #fff !important;
+    font-size: 15px;
+    font-family:'Poppins' !important;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 10px;
+
+}
+
+/* .custom-container {
+    background:wheat;
+    border: 4px solid rgb(7, 255, 7);
+}
+
+.custom-row {
+    border: 3px dotted blue;
+}
+
+
+.custom-col {
+    border: 3px dotted red;
+}  */
