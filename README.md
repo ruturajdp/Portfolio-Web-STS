@@ -1,5 +1,3 @@
-# Portfolio-Web-STS
-
 # Portfolio Web Application
 
 This project is a portfolio web application built using the Spring Boot framework and Model-View-Controller (MVC) architecture. 
